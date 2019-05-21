@@ -12,6 +12,15 @@ Cuando se ejecuta el proceso banco este crea  una memoria compartida llamada  �
 
 <pre><code>$ ./banco_gui 4</code></pre>
 
+![cajeros](https://user-images.githubusercontent.com/48129411/58126219-16f7c600-7bd8-11e9-8c98-3c156373044a.jpg)
+
+después de crear la memoria compartida al ejecutar el  proceso banco,  se  ejecutar el cliente, en donde el primer argumento corresponde a la identificación y el segundo al nombre.
+
+<pre><code>$./cliente 10752321635 carlos</code></pre>
+
+
+
+
 
 
 
