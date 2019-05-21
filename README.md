@@ -1,4 +1,4 @@
-# tarea1-arias-jaime-pineda
+#                                     PRACTICA 5- SINCRONIZACIÓN  
 skjbskbskbs sjgvsuv kjbkjbkbk-jbnkjb
 
 .}:}l.
