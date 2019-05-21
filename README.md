@@ -18,29 +18,22 @@ después de crear la memoria compartida al ejecutar el  proceso banco,  se  ejec
 
 <pre><code>$./cliente 10752321635 carlos</code></pre>
 
+  ![cajerosm](https://user-images.githubusercontent.com/48129411/58127906-106b4d80-7bdc-11e9-9dd5-50ddcbdd1bbe.jpg)
+  
+ a medida que los clientes van llegando se van acomodando a los cajeros que están libres.
 
-
-
-
-
-
-
-``php
-
-sjknskjsnkjsns
-``
+Se creo una estructura la cual es compartida por los dos procesos.
 
 ```php
-<?php
-if (condicion1) {
-    accion1;
-} else {
-    accion2;
-    if (condicion3) {
-        accion3;
-    } else {
-        accion4;
-    }
-}
-?>
+
+ 
+ typedef struct
+    {
+    char cajas_[100];
+    char nombreCliente[20];
+    char identidicacionCliente[20];
+    {
+
+
 ```
+ en donde `char cajas_[100]` lleva el conteo de la cantidad de cajas se crearon y su correspondiente  estado, y ` char nombreCliente[20],identidicacionCliente[20]` información del cliente 
