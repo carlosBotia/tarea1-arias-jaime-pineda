@@ -8,6 +8,8 @@ El presente laboratorio se hace con el fin poder sincronizar dos procesos (clien
 
 # procedimeinto y desarrollo 
 
+la imagen sigueinte 
+
 Cuando se ejecuta el proceso banco este crea  una memoria compartida llamada  “ nombre “, la cual sirve para poder comunicarse con los distintos clientes que quieren acceder a ella. A su vez crea de forma dinámica la cantidad de cajeros que este posee tal como se presenta a continuación.
 
 <pre><code>$ ./banco_gui 4</code></pre>
