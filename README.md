@@ -4,7 +4,7 @@ En el presente laboratorio se realizó un programa  en c++ y  la interfaz grafic
 # Justificación.
 
 El presente laboratorio se hace con el fin poder sincronizar dos procesos (cliente y banco) mediante la utilización de semáforos, evitando así que mas de un proceso acceda a un mismo recurso 
-' svsjvjshvsjhvs bbbbbbbbb'
+
 
 # procedimeinto y desarrollo 
 
@@ -36,4 +36,31 @@ Se creo una estructura la cual es compartida por los dos procesos.
 
 
 ```
- en donde `char cajas_[100]` lleva el conteo de la cantidad de cajas se crearon y su correspondiente  estado, y ` char nombreCliente[20],identidicacionCliente[20]` información del cliente 
+ en donde `char cajas_[100]` lleva el conteo de la cantidad de cajas que  crearon y su correspondiente  estado, y ` char nombreCliente[20],identidicacionCliente[20]`  tiene la información del cliente.
+ 
+cuando el proceso cliente  inicia este revisa el arreglo  que contiene el número de cajas que el banco creo, si  `cajas_[0]=0` , quiere decir que la caja 1 está vacía y el cliente puede acceder a ella , inmediatamente se   cambia de estado  `cajas_[0]=1` , espera un determinado tiempo( de 5 a 20 segundos)  y vuelve a cambiar el estado a  vacío.
+ ```php
+  if(cajas_[0]==0)
+  {
+  cajas_[0]=1;
+  sleep(tiempoAleatorio);
+  cajas[0]=1;
+  exit(1);
+  } 
+  ```
+ 
+ para poder leer contantemente la memoria compartida que contiene la información de los clientes se utilizó un timer, este es un tipo de reloj interno que permite ejecutar una acción o función mediante una interrupción en QT, así el proceso banco esta leyendo contantemente la memoria compartida en busca de un nuevo cliente que se quiera suscribir.
+ ```php
+ cajas_banco::cajas_banco(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::cajas_banco)
+{
+    ui->setupUi(this);
+    QTimer *cronometro=new QTimer(this);
+    connect(cronometro, SIGNAL(timeout()), this, SLOT(funcion()));
+    cronometro->start(1000);
+}
+
+```
+la funcion `funcion();`  es la encargada de revisar la memoria compartida periódicamente ,  esta función envían los datos recolectados a la función `iniciar(int cajas )` que se encarga de cambiar  el estado de las imágenes y la información de los clientes 
+ 
